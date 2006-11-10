@@ -1,0 +1,20 @@
+<extension id="org.testng.jdeveloper" version="1.0" esdk-version="1.0"
+           rsbundle-class="org.testng.jdeveloper.resources"
+           xmlns="http://jcp.org/jsr/198/extension-manifest">
+  <name>${EXTENSION_NAME}</name>
+  <hooks>
+    <!-- TODO: declare functionality provided by your extension here. -->
+    <feature-hook>
+      <part-of>oracle.jdeveloper</part-of>
+      <license>Apache License, Version 2.0
+http://www.apache.org/licenses/LICENSE-2.0</license>
+      <copyright>Alex Ruiz
+Yvonne Wang</copyright>
+      <description>Extension that allows execution of TestNG-based tests.</description>
+    </feature-hook>
+  </hooks>
+  <platform-info>
+    <toolkit>swing</toolkit>
+  </platform-info>
+  <owner>Alex Ruiz &amp; Yvonne Wang</owner>
+</extension>
