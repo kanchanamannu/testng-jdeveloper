@@ -1,5 +1,56 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <jpr:project xmlns:jpr="http://xmlns.oracle.com/ide/project">
+   <hash n="component-versions">
+      <value n="oracle.ide.model.Project" v="11.1.1.0.0"/>
+      <value n="oracle.ide.model.ResourcePathsMigrator" v="11.1.1.0.0"/>
+      <value n="oracle.jdevimpl.deploy.DeploymentProfilesMigrator" v="11.1.1.0.0"/>
+      <value n="oracle.jdevimpl.runner.RunConfigurationsMigrator" v="11.1.1.0.0"/>
+   </hash>
+   <list n="contentSets">
+      <string v="oracle.jdeveloper.model.PathsConfiguration/javaContentSet"/>
+      <string v="oracle.ide.model.ResourcePaths/resourcesContentSet"/>
+   </list>
+   <value n="defaultPackage" v="testngextension"/>
+   <hash n="extensiondtProperties">
+      <value n="extensiondt.deploymentdir" v="jdev/extensions/"/>
+      <url n="extensiondt.manifest" path="src/META-INF/extension.xml"/>
+      <value n="extensiondt.platform" v="dt_jdev"/>
+   </hash>
+   <hash n="oracle.ide.model.ResourcePaths">
+      <hash n="resourcesContentSet">
+         <list n="pattern-filters">
+            <string v="+*"/>
+         </list>
+         <list n="url-path">
+            <url path="."/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.ide.model.TechnologyScopeConfiguration">
+      <list n="technologyScope">
+         <string v="Java"/>
+         <string v="Swing/AWT"/>
+      </list>
+   </hash>
+   <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
+      <value n="compiler.name" v="Javac"/>
+      <value n="source" v="1.5"/>
+      <value n="target" v="1.5"/>
+   </hash>
+   <hash n="oracle.jdeveloper.javadoc.JProjectJavadoc">
+      <value n="generateAuthor" v="true"/>
+      <value n="generateVersion" v="true"/>
+   </hash>
+   <hash n="oracle.jdeveloper.model.PathsConfiguration">
+      <hash n="javaContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="src/"/>
+         </list>
+      </hash>
+   </hash>
    <hash n="oracle.jdeveloper.runner.RunConfigurations">
       <hash n="runConfigurationDefinitions">
          <hash n="Default">
@@ -10,5 +61,34 @@
       <list n="runConfigurationList">
          <string v="Default"/>
       </list>
+   </hash>
+   <hash n="oracle.jdevimpl.buildtools.ModuleConfiguration">
+      <value n="module.deploy.type" v="NONE"/>
+      <value n="module.extension.dir"/>
+      <value n="module.extension.id" v=""/>
+      <value n="module.primary.contact" v=""/>
+      <value n="module.simplejar.path"/>
+      <value n="module.sourcezip.path"/>
+      <value n="module.translation.languages" v=""/>
+   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectLibraries">
+      <list n="exportedReferences">
+         <hash>
+            <value n="id" v="JDeveloper Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
+      <list n="libraryReferences">
+         <hash>
+            <value n="id" v="JDeveloper Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
+   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectPaths">
+      <url n="outputDirectory" path="classes/"/>
+   </hash>
+   <hash n="ResourceBundleOptions">
+      <value n="DefaultBundleTypeId" v="xliffResourceBundleId"/>
    </hash>
 </jpr:project>

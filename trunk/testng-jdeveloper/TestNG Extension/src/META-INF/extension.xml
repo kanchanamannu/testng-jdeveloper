@@ -11,10 +11,20 @@ http://www.apache.org/licenses/LICENSE-2.0</license>
       <copyright>Alex Ruiz
 Yvonne Wang</copyright>
       <description>Extension that allows execution of TestNG-based tests.</description>
+      <optional>true</optional>
     </feature-hook>
   </hooks>
   <platform-info>
     <toolkit>swing</toolkit>
   </platform-info>
   <owner>Alex Ruiz &amp; Yvonne Wang</owner>
+  <dependencies>
+    <import>oracle.ide</import>
+    <import>oracle.ide.webupdate</import>
+    <import>oracle.ide.log</import>
+    <import>oracle.jdeveloper</import>
+  </dependencies>
+  <classpaths>
+    <classpath>oracle.jdeveloper.jar</classpath>
+  </classpaths>
 </extension>
