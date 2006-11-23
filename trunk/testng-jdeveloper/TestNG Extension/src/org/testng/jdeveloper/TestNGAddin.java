@@ -15,20 +15,10 @@
  */
 package org.testng.jdeveloper;
 
-import javax.swing.JMenuItem;
-
 import oracle.ide.Addin;
-import oracle.ide.Context;
+import static oracle.ide.Ide.findOrCreateCmdID;
 import oracle.ide.controller.ContextMenu;
-import oracle.ide.controller.ContextMenuListener;
-import oracle.ide.controller.IdeAction;
 import static oracle.ide.explorer.ExplorerManager.getExplorerManager;
-import oracle.ide.model.Attributes;
-import oracle.ide.model.Element;
-import oracle.ide.model.Node;
-
-import oracle.jdevimpl.java.explorer.JavaCodeElement;
-import oracle.jdevimpl.java.explorer.MethodElement;
 
 /**
  * Understands the entry point of the TestNG extension.
@@ -43,21 +33,7 @@ public final class TestNGAddin implements Addin {
 
   private void addContextMenuToExplorerManager() {
     ContextMenu contextMenu = getExplorerManager().getContextMenu();
-    contextMenu.addContextMenuListener(new AbstractContextMenuListener() {
-      @Override public void menuWillShow(ContextMenu contextMenu) {
-        Context context = contextMenu.getContext();
-        Element e = context.getElement();
-        if (!isTestMethod(e)) return;
-    //        IdeAction myAction = IdeAction.find(_myActionID);
-    //        JMenuItem myMenu = contextMenu.createMenuItem(myAction);
-    //        contextMenu.add(myMenu);
-      }
-    });
+    contextMenu.addContextMenuListener(new AddinContextListener());
   }
 
-  private boolean isTestMethod(Element e) {
-    if (!(e instanceof MethodElement)) return false;
-    MethodElement methodElement = (MethodElement)e;
-    return true;
-  }
 }
