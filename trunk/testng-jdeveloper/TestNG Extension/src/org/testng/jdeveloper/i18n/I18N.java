@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
 import static org.testng.jdeveloper.util.Objects.isEmpty;
 
 /**
- * Understands internationalization.
+ * Understands internationalization. Messages are stored in the file messages.properties. 
  *
  * @author Alex Ruiz
  */
@@ -39,23 +39,33 @@ public final class I18N {
     return ResourceBundle.getBundle("messages", locale);
   }
   
+  /**
+   * Returns (from the file messages.properties) a message given its key.
+   * @param key the key to be used to find the message.
+   * @param args any arguments to be used to format the message to return.
+   * @return a message given its key.
+   */
   public static String text(String key, Object...args) { 
-    String text = messages.getString(textKey(key));
-    if (!isEmpty(args)) text = MessageFormat.format(text, args);
+    String text = messages.getString(keyForText(key));
+    if (!isEmpty(args)) return MessageFormat.format(text, args);
     return text; 
   }
-  
+
+  /**
+   * Returns (from the file messages.properties) a number representing the mnemonic to use in a GUI component.
+   * @param key the key to be used to find the mnemonic.
+   * @return a number representing the mnemonic to use in a GUI component.
+   */
   public static int mnemonic(String key) { 
     try {
-      return Integer.parseInt(messages.getString(mnemonicKey(key)));
+      return Integer.parseInt(messages.getString(keyForMnemonic(key)));
     } catch (NumberFormatException e) {
       return 0;
     }
   }
 
-  private static String textKey(String key) { return key + TEXT_KEY_SUFFIX; }
-  
-  private static String mnemonicKey(String key) { return key + MNEMONIC_KEY_SUFFIX; }
+  private static String keyForText(String key) { return key + TEXT_KEY_SUFFIX; }
+  private static String keyForMnemonic(String key) { return key + MNEMONIC_KEY_SUFFIX; }
   
   private I18N() {}
 }
