@@ -30,6 +30,7 @@
       <list n="technologyScope">
          <string v="Java"/>
          <string v="Swing/AWT"/>
+         <string v="General"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">

@@ -13,7 +13,7 @@
  * 
  * Copyright @2006 the original author or authors.
  */
-package org.testng.jdeveloper;
+package org.testng.jdeveloper.extension;
 
 import oracle.ide.Context;
 import oracle.ide.controller.ContextMenu;
